@@ -1,9 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/// <summary>
-/// Interactable door/entrance that can teleport player or load a new scene.
-/// </summary>
 public class DoorInteractable : Interactable
 {
     [Header("Door Settings")]

@@ -7,6 +7,7 @@ public class TileHighlightManager : MonoBehaviour
     [SerializeField] private GridLayout worldGrid;
     [SerializeField] private Tilemap highlightTilemap;
     [SerializeField] private TileBase highlightTile;
+    [SerializeField] private Transform playerTransform;
 
     private Vector2Int facingDirection = Vector2Int.down;
     private Vector3Int previousCell;
@@ -39,6 +40,17 @@ public class TileHighlightManager : MonoBehaviour
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             facingDirection = Vector2Int.right;
     }
+
+    public Vector3Int GetTargetCell()
+    {
+        Vector3 worldPos = cellAnchor != null ? cellAnchor.position : playerTransform.position;
+
+        Vector3Int playerCell = worldGrid.WorldToCell(worldPos);
+        Vector3Int targetCell = playerCell + new Vector3Int(facingDirection.x, facingDirection.y, 0);
+
+        return targetCell;
+    }
+
 
     private void UpdateHighlight()
     {
