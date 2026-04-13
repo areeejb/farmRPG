@@ -3,21 +3,24 @@ using UnityEngine.Tilemaps;
 
 public class TileHighlightManager : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Transform playerTransform;
     [SerializeField] private Transform cellAnchor;
     [SerializeField] private GridLayout worldGrid;
     [SerializeField] private Tilemap highlightTilemap;
     [SerializeField] private TileBase highlightTile;
 
-    [Header("Optional: tilemap used to check valid ground")]
-    [SerializeField] private Tilemap groundTilemap;
-
-    [Header("Settings")]
-    [SerializeField] private Vector2Int facingDirection = Vector2Int.down;
-
+    private Vector2Int facingDirection = Vector2Int.down;
     private Vector3Int previousCell;
-    private bool hasPreviousCell = false;
+    private bool hasPreviousCell;
+
+    private void Start()
+    {
+        Debug.Log("TileHighlightManager started");
+
+        if (highlightTilemap == null) Debug.LogError("Highlight Tilemap is missing");
+        if (highlightTile == null) Debug.LogError("Highlight Tile is missing");
+        if (worldGrid == null) Debug.LogError("WorldGrid is missing");
+        if (cellAnchor == null) Debug.LogError("CellAnchor is missing");
+    }
 
     private void Update()
     {
@@ -39,37 +42,18 @@ public class TileHighlightManager : MonoBehaviour
 
     private void UpdateHighlight()
     {
-        Vector3 worldPosition = cellAnchor != null ? cellAnchor.position : playerTransform.position;
-
-        Vector3Int playerCell = worldGrid.WorldToCell(worldPosition);
+        Vector3 worldPos = cellAnchor.position;
+        Vector3Int playerCell = worldGrid.WorldToCell(worldPos);
         Vector3Int targetCell = playerCell + new Vector3Int(facingDirection.x, facingDirection.y, 0);
 
-        ClearPreviousHighlight();
-
-        if (groundTilemap != null)
-        {
-            if (!groundTilemap.HasTile(targetCell))
-                return;
-        }
+        if (hasPreviousCell)
+            highlightTilemap.SetTile(previousCell, null);
 
         highlightTilemap.SetTile(targetCell, highlightTile);
 
         previousCell = targetCell;
         hasPreviousCell = true;
-    }
 
-    private void ClearPreviousHighlight()
-    {
-        if (!hasPreviousCell) return;
-
-        highlightTilemap.SetTile(previousCell, null);
-        hasPreviousCell = false;
-    }
-
-    public Vector3Int GetTargetCell()
-    {
-        Vector3 worldPosition = cellAnchor != null ? cellAnchor.position : playerTransform.position;
-        Vector3Int playerCell = worldGrid.WorldToCell(worldPosition);
-        return playerCell + new Vector3Int(facingDirection.x, facingDirection.y, 0);
+        Debug.Log($"Anchor world = {worldPos}, Player cell = {playerCell}, Target cell = {targetCell}");
     }
 }

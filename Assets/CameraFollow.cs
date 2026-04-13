@@ -1,19 +1,45 @@
 using UnityEngine;
+    
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target;         
-    public float smoothSpeed = 5f;    
-    public Vector3 offset = new Vector3(0, 0, -10); 
+    [SerializeField] private Transform target;
 
-    void LateUpdate()
+    [Header("Map Bounds")]
+    [SerializeField] private float minX;
+    [SerializeField] private float maxX;
+    [SerializeField] private float minY;
+    [SerializeField] private float maxY;
+
+    [Header("Follow")]
+    [SerializeField] private float smoothSpeed = 5f;
+
+    private Camera cam;
+
+    private void Awake()
     {
-        if (target == null) return;
-
-        Vector3 desiredPosition = target.position + offset;
-
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
-
-        transform.position = smoothedPosition;
+        cam = GetComponent<Camera>();
     }
+
+   private void LateUpdate()
+{
+    if (target == null) return;
+
+    float halfHeight = cam.orthographicSize;
+    float halfWidth = cam.orthographicSize * cam.aspect;
+
+    float minCamX = minX + halfWidth;
+    float maxCamX = maxX - halfWidth;
+    float minCamY = minY + halfHeight;
+    float maxCamY = maxY - halfHeight;
+
+    Debug.Log($"target={target.position} halfW={halfWidth} halfH={halfHeight} camX range=({minCamX},{maxCamX}) camY range=({minCamY},{maxCamY})");
+
+    float clampedX = Mathf.Clamp(target.position.x, minCamX, maxCamX);
+    float clampedY = Mathf.Clamp(target.position.y, minCamY, maxCamY);
+
+    Vector3 desiredPosition = new Vector3(clampedX, clampedY, transform.position.z);
+    transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
 }
+}
+

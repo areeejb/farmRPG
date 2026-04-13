@@ -5,36 +5,51 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     public float climbSpeed = 3f;
 
+    [Header("Map Bounds")]
+    [SerializeField] private float minX;
+    [SerializeField] private float maxX;
+    [SerializeField] private float minY;
+    [SerializeField] private float maxY;
+
     private Rigidbody2D rb;
     private Vector2 movement;
     private bool onLadder = false;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
+{
+    Vector2 velocity;
+
+    if (onLadder)
     {
-        if (onLadder)
-        {
-            rb.gravityScale = 0;
-            rb.linearVelocity = new Vector2(movement.x * speed, movement.y * climbSpeed);
-        }
-        else
-        {
-            rb.gravityScale = 1;
-            rb.linearVelocity = movement * speed;
-        }
+        rb.gravityScale = 0f;
+        velocity = new Vector2(movement.x * speed, movement.y * climbSpeed);
+    }
+    else
+    {
+        rb.gravityScale = 1f;
+        velocity = movement * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    Vector2 nextPosition = rb.position + velocity * Time.fixedDeltaTime;
+
+    nextPosition.x = Mathf.Clamp(nextPosition.x, minX, maxX);
+    nextPosition.y = Mathf.Clamp(nextPosition.y, minY, maxY);
+
+    rb.MovePosition(nextPosition);
+}
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ladder"))
         {
@@ -42,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Ladder"))
         {
