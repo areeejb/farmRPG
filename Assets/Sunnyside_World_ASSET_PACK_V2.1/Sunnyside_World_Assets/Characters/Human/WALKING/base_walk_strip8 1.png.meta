@@ -1,34 +1,31 @@
 fileFormatVersion: 2
-guid: 7e4b26afb314a4fceb34f825fb28757f
+guid: 481dafe0f3fd91d44bb608fe74269703
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8091321643688609963
-    second: base_idle_strip9_0
+      213: -1737598524080498344
+    second: base_walk_strip8_0
   - first:
-      213: 6711590467529672262
-    second: base_idle_strip9_1
+      213: -8522627396629037226
+    second: base_walk_strip8_1
   - first:
-      213: -8690178428761904197
-    second: base_idle_strip9_2
+      213: 6999510798459091389
+    second: base_walk_strip8_2
   - first:
-      213: 2203037612859406267
-    second: base_idle_strip9_3
+      213: -27604772618167018
+    second: base_walk_strip8_3
   - first:
-      213: -6826285529842234056
-    second: base_idle_strip9_4
+      213: 4549400451008100615
+    second: base_walk_strip8_4
   - first:
-      213: -3491692646383869254
-    second: base_idle_strip9_5
+      213: 951739465742405775
+    second: base_walk_strip8_5
   - first:
-      213: 8052179660830632159
-    second: base_idle_strip9_6
+      213: -3020992744206059292
+    second: base_walk_strip8_6
   - first:
-      213: 2031753151691111046
-    second: base_idle_strip9_7
-  - first:
-      213: 1727022864612719175
-    second: base_idle_strip9_8
+      213: 3277107353622960758
+    second: base_walk_strip8_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -137,199 +134,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: base_idle_strip9_0
+      name: base_walk_strip8_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 25
-        width: 11
+        x: 42
+        y: 24
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85950f9395fc2e7e0800000000000000
+      internalID: -1737598524080498344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base_walk_strip8_1
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 24
+        width: 13
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 557b280b5d9d5bf80800000000000000
-      internalID: -8091321643688609963
+      spriteID: 65ff9ee998b89b980800000000000000
+      internalID: -8522627396629037226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: base_idle_strip9_1
+      name: base_walk_strip8_2
       rect:
         serializedVersion: 2
-        x: 139
-        y: 25
-        width: 11
+        x: 234
+        y: 24
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db93aa77cf1432160800000000000000
+      internalID: 6999510798459091389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base_walk_strip8_3
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 24
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d1df50b9ded9ff0800000000000000
+      internalID: -27604772618167018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base_walk_strip8_4
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 24
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 709f65f3b97b22f30800000000000000
+      internalID: 4549400451008100615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base_walk_strip8_5
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 24
+        width: 13
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 646010f78fb542d50800000000000000
-      internalID: 6711590467529672262
+      spriteID: f80db466002453d00800000000000000
+      internalID: 951739465742405775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: base_idle_strip9_2
+      name: base_walk_strip8_6
       rect:
         serializedVersion: 2
-        x: 235
-        y: 25
-        width: 11
-        height: 16
+        x: 618
+        y: 24
+        width: 13
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bbb62e6f2c8466780800000000000000
-      internalID: -8690178428761904197
+      spriteID: 4e8b094ea174316d0800000000000000
+      internalID: -3020992744206059292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: base_idle_strip9_3
+      name: base_walk_strip8_7
       rect:
         serializedVersion: 2
-        x: 331
-        y: 25
-        width: 12
-        height: 15
+        x: 714
+        y: 24
+        width: 13
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb73f456903c29e10800000000000000
-      internalID: 2203037612859406267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: base_idle_strip9_4
-      rect:
-        serializedVersion: 2
-        x: 427
-        y: 25
-        width: 12
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 83d4d525a792441a0800000000000000
-      internalID: -6826285529842234056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: base_idle_strip9_5
-      rect:
-        serializedVersion: 2
-        x: 523
-        y: 25
-        width: 11
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab22273b9040b8fc0800000000000000
-      internalID: -3491692646383869254
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: base_idle_strip9_6
-      rect:
-        serializedVersion: 2
-        x: 619
-        y: 25
-        width: 11
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fd86f6f3db61fbf60800000000000000
-      internalID: 8052179660830632159
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: base_idle_strip9_7
-      rect:
-        serializedVersion: 2
-        x: 715
-        y: 25
-        width: 11
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 68a34dd0abc323c10800000000000000
-      internalID: 2031753151691111046
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: base_idle_strip9_8
-      rect:
-        serializedVersion: 2
-        x: 811
-        y: 25
-        width: 11
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 74af73c252e97f710800000000000000
-      internalID: 1727022864612719175
+      spriteID: 67a548776cf9a7d20800000000000000
+      internalID: 3277107353622960758
       vertices: []
       indices: 
       edges: []
@@ -338,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c251308dbab06f74680d0785dba02cf5
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -346,19 +321,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":96.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      base_idle_strip9_0: -8091321643688609963
-      base_idle_strip9_1: 6711590467529672262
-      base_idle_strip9_2: -8690178428761904197
-      base_idle_strip9_3: 2203037612859406267
-      base_idle_strip9_4: -6826285529842234056
-      base_idle_strip9_5: -3491692646383869254
-      base_idle_strip9_6: 8052179660830632159
-      base_idle_strip9_7: 2031753151691111046
-      base_idle_strip9_8: 1727022864612719175
+      base_walk_strip8_0: -1737598524080498344
+      base_walk_strip8_1: -8522627396629037226
+      base_walk_strip8_2: 6999510798459091389
+      base_walk_strip8_3: -27604772618167018
+      base_walk_strip8_4: 4549400451008100615
+      base_walk_strip8_5: 951739465742405775
+      base_walk_strip8_6: -3020992744206059292
+      base_walk_strip8_7: 3277107353622960758
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
